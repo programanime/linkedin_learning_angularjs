@@ -1,0 +1,11 @@
+[
+    {"name":"services", "description":"let you enrich your angular application"},
+    {"name":"$scope", "description":"let you link the view and the controller"},
+    {"name":"$http", "description":"let you get data from services"},
+    {"name":"", "description":""},
+    {"name":"", "description":""},
+    {"name":"", "description":""},
+    {"name":"", "description":""},
+    {"name":"", "description":""},
+    {"name":"", "description":""}
+]

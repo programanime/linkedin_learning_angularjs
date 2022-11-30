@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular/angular-route.min.js"></script>
+    <script src="package.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="appChat">
+    <div >
+        this is the chat and you
+        <div ng-controller="chatController">
+            <h1>chatController</h1>
+            <input type="text" ng-model="query">
+            {{query}}
+            <img ng-src="images/{{name}}" alt="" />
+        </div>
+
+        <div ng-controller="chatController">
+            <h1>chatController</h1>
+            {{name}}
+        </div>
+
+        <div ng-controller="packageController">
+            <h1>packageController</h1>
+            {{name}}
+        </div>
+
+        <div ng-controller="secondController">
+            <h1>secondController</h1>
+            <p ng-show="age > 5">you are old men</p>
+            <p ng-hide="age < 50">you are not to old</p>
+            <div ng-repeat="e in data">
+                <div>{{e.name}}</div>
+                <div>{{e.description}}</div>
+            </div>
+        </div>
+
+        <div ng-controller="dataController">
+            <h1>dataController</h1>
+            <div ng-repeat="e in data">
+                <div>{{e.name | uppercase}}</div>
+                <div>{{e.description | lowercase}}</div>
+            </div>
+        </div>
+
+        <div ng-controller="arrayFiltersController">
+            <h1>arrayFiltersController</h1>
+            <h2>limitTo</h2>
+            <div ng-repeat="item in filters | limitTo:2:2">
+                {{ item }}
+            </div>
+            
+            <h2>filter</h2>
+            <input ng-model="query" />
+            <div ng-repeat="item in filters | filter:query">
+                {{ item }}
+            </div>
+
+            <h2>orderBy</h2>
+            <div ng-repeat="item in data | orderBy: 'name' : 'reverse'">
+                {{ item.name }} : {{ item.description }}
+            </div>
+        </div>
+
+        <div ng-view>
+
+        </div>
+    </div>
+</body>
+</html>
