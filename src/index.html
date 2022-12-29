@@ -14,9 +14,17 @@
         this is the chat and you
         <div ng-controller="chatController">
             <h1>chatController</h1>
-            <input type="text" ng-model="query">
+            <input type="text" ng-model="query" limit="30" maxLimit="100">
             {{query}}
             <img ng-src="images/{{name}}" alt="" />
+
+            <p ng-bind="instructions"></p>
+            <div my-card></div>
+            <my-card-with-controller></my-card-with-controller>
+            <div class="my-card-with-controller-and-class"></div>
+
+            <card-view></card-view>
+            <card-view-with-scope nombre="name"></card-view-with-scope>
         </div>
 
         <div ng-controller="chatController">
